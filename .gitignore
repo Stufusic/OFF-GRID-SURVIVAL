@@ -57,3 +57,10 @@ __MACOSX/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Exclude internal Markdown documentation from Git (keep only root README.md)
+*.md
+!/README.md
+*/*.md
+*/*/*.md
+*/*/*/*.md

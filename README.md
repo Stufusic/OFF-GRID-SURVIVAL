@@ -1,4 +1,4 @@
-# 🧭 Off-Grid Survival Engine
+# Off-Grid Survival Engine
 
 > **Probabilistic Offline Survival & Dead Reckoning Navigation Engine**  
 > *Lõi định vị sinh tồn xác suất ngoại tuyến chuẩn C++20, kết hợp dung hợp cảm biến đa tần số (Sensor Fusion), khớp địa hình DEM, thiên văn học và khung thực nghiệm (Research Harness).*
@@ -11,7 +11,7 @@
 
 ---
 
-## 📖 Giới thiệu (Overview)
+## Giới thiệu (Overview)
 
 **Off-Grid Survival Engine** là hệ thống định vị và sinh tồn xác suất ngoại tuyến phân tán, được thiết kế hoạt động hoàn toàn độc lập trong môi trường **không có GPS** (rừng núi sâu, hầm ngầm, tòa nhà cao tầng, khu vực thiên tai hoặc bị chế áp điện tử).
 
@@ -19,20 +19,20 @@ Thay vì phụ thuộc vào một tọa độ ước lượng điểm duy nhất
 
 ---
 
-## 🚀 Tính năng nổi bật (Key Features)
+## Tính năng nổi bật (Key Features)
 
-- **⚡ Zero-Allocation Hot Path:** Không cấp phát bộ nhớ động (`malloc`, `new`) trên chu trình thời gian thực 50Hz/100Hz; sử dụng buffer tĩnh và cấu trúc dữ liệu đã reserve sẵn.
-- **🛡️ 3D Error-State Kalman Filter (ESKF):** Tích phân Quaternion động học 100Hz, cổng hấp dẫn bán tĩnh (Quasi-Static Gravity Gate), bù nghiêng la bàn (DCM Tilt Compensation) và cổng lọc nhiễu từ trường Chi-Square ($\chi^2$).
-- **👣 Dead Reckoning & PDR Đa Mô Hình:** Bộ lọc thông dải IIR Butterworth (0.5 – 3.0 Hz), thuật toán phát hiện bước thích ứng động, tích hợp các mô hình độ dài bước chân (Weinberg, Kim, Scarlett, Gaidamba).
-- **🏃 Máy trạng thái sinh học (11 Motion Modes):** Tự động nhận diện trạng thái: *Đứng yên (Stationary), Đi bằng phẳng (Walking Flat), Chạy (Running), Lên/Xuống cầu thang (Stairs Ascent/Descent), Thang máy (Elevator), Thang cuốn (Escalator), Phương tiện (Vehicle), Ngã/Lăn lộn (Tumble/Fall).*
-- **⛰️ Khớp bản đồ địa hình số (Terrain-Referenced Navigation - TRN):** Parser file nhị phân DEM `.sdem` tối ưu đọc qua bộ nhớ chia sẻ / Memory-Mapped I/O, nội suy song tuyến (bilinear) và song bậc ba (bicubic).
-- **☀️ Định vị thiên văn học (Astronomical Ephemeris):** Thuật toán Jean Meeus tính toán vị trí Mặt Trời / Mặt Trăng làm mốc phương vị tuyệt đối không từ tính.
-- **🚨 Cứu nạn & Gói tin sinh tồn (Rescue Telemetry):** Đóng gói nhị phân siêu gọn (Compact Binary Rescue Packet), phát hiện ngã (Tumble Auditor) và cơ chế còi báo cứu nạn.
-- **🖥️ Dashboard trực quan & Web UI:** Giao diện máy tính Native (Dear ImGui v1.90.9 + ImPlot v0.16 + DirectX 11) kết hợp Web Server tích hợp phục vụ giao diện Web HUD thời gian thực (`http://localhost:8080`).
+- **Zero-Allocation Hot Path:** Không cấp phát bộ nhớ động (`malloc`, `new`) trên chu trình thời gian thực 50Hz/100Hz; sử dụng buffer tĩnh và cấu trúc dữ liệu đã reserve sẵn.
+- **3D Error-State Kalman Filter (ESKF):** Tích phân Quaternion động học 100Hz, cổng hấp dẫn bán tĩnh (Quasi-Static Gravity Gate), bù nghiêng la bàn (DCM Tilt Compensation) và cổng lọc nhiễu từ trường Chi-Square ($\chi^2$).
+- **Dead Reckoning & PDR Đa Mô Hình:** Bộ lọc thông dải IIR Butterworth (0.5 – 3.0 Hz), thuật toán phát hiện bước thích ứng động, tích hợp các mô hình độ dài bước chân (Weinberg, Kim, Scarlett, Gaidamba).
+- **Máy trạng thái sinh học (11 Motion Modes):** Tự động nhận diện trạng thái: *Đứng yên (Stationary), Đi bằng phẳng (Walking Flat), Chạy (Running), Lên/Xuống cầu thang (Stairs Ascent/Descent), Thang máy (Elevator), Thang cuốn (Escalator), Phương tiện (Vehicle), Ngã/Lăn lộn (Tumble/Fall).*
+- **Khớp bản đồ địa hình số (Terrain-Referenced Navigation - TRN):** Parser file nhị phân DEM `.sdem` tối ưu đọc qua bộ nhớ chia sẻ / Memory-Mapped I/O, nội suy song tuyến (bilinear) và song bậc ba (bicubic).
+- **Định vị thiên văn học (Astronomical Ephemeris):** Thuật toán Jean Meeus tính toán vị trí Mặt Trời / Mặt Trăng làm mốc phương vị tuyệt đối không từ tính.
+- **Cứu nạn & Gói tin sinh tồn (Rescue Telemetry):** Đóng gói nhị phân siêu gọn (Compact Binary Rescue Packet), phát hiện ngã (Tumble Auditor) và cơ chế còi báo cứu nạn.
+- **Dashboard trực quan & Web UI:** Giao diện máy tính Native (Dear ImGui v1.90.9 + ImPlot v0.16 + DirectX 11) kết hợp Web Server tích hợp phục vụ giao diện Web HUD thời gian thực (`http://localhost:8080`).
 
 ---
 
-## 🏗️ Kiến trúc luồng dữ liệu (Data Pipeline Architecture)
+## Kiến trúc luồng dữ liệu (Data Pipeline Architecture)
 
 ```text
                [CẢM BIẾN PHẦN CỨNG]
@@ -92,7 +92,7 @@ Thay vì phụ thuộc vào một tọa độ ước lượng điểm duy nhất
 
 ---
 
-## 📁 Cấu trúc thư mục (Monorepo Layout)
+## Cấu trúc thư mục (Monorepo Layout)
 
 ```text
 OFF-GRID-SURVIVAL/
@@ -140,15 +140,11 @@ OFF-GRID-SURVIVAL/
 │
 ├── testdata/                      # Tập dữ liệu kiểm thử & mẫu cảm biến (MotionSense)
 └── docs/                          # Tài liệu kỹ thuật chi tiết & Báo cáo thực nghiệm
-    ├── Rule.md                    # Quy chuẩn lập trình C++20 & Nguyên tắc số học
-    ├── Plan.md                    # Bản kế hoạch kiến trúc
-    ├── Pipeline.md                # Đặc tả đường ống xử lý dữ liệu
-    └── comprehensive_system_audit_and_test_report.md # Báo cáo kiểm thử toàn diện
 ```
 
 ---
 
-## 🛠️ Hướng dẫn cài đặt & Biên dịch (Build Instructions)
+## Hướng dẫn cài đặt & Biên dịch (Build Instructions)
 
 ### Yêu cầu hệ thống
 - **Trình biên dịch C++20:**
@@ -176,7 +172,7 @@ cmake --build build --config Release
 
 ---
 
-## 🧪 Chạy Kiểm thử & Khung thực nghiệm (Testing & Evaluation)
+## Chạy Kiểm thử & Khung thực nghiệm (Testing & Evaluation)
 
 ### 1. Chạy toàn bộ Unit Tests (GoogleTest)
 
@@ -199,7 +195,7 @@ ctest --output-on-failure
 ```
 
 Ứng dụng sẽ đồng thời khởi chạy **Embedded HTTP Server** tại cổng `8080`. Bạn có thể mở trình duyệt và truy cập:
-👉 **`http://localhost:8080`** để theo dõi giao diện Web Dashboard thời gian thực.
+`http://localhost:8080` để theo dõi giao diện Web Dashboard thời gian thực.
 
 ### 3. Chạy công cụ Replay & Benchmark dữ liệu cảm biến
 
@@ -209,7 +205,7 @@ ctest --output-on-failure
 
 ---
 
-## 📸 Hình ảnh minh họa (Screenshots & Visuals)
+## Hình ảnh minh họa (Screenshots & Visuals)
 
 | Giao diện Replay & Dashboard HUD | Quỹ đạo 3D Cầu thang thực tế |
 |:---:|:---:|
@@ -221,9 +217,9 @@ ctest --output-on-failure
 
 ---
 
-## 📜 Quy chuẩn lập trình & Bất biến an toàn (Safety Invariants)
+## Quy chuẩn lập trình & Bất biến an toàn (Safety Invariants)
 
-Theo quy định trong [`docs/Rule.md`](docs/Rule.md), mã nguồn tuân thủ nghiêm ngặt các quy tắc:
+Mã nguồn tuân thủ nghiêm ngặt các quy tắc an toàn số học:
 
 1. **Hot-Path Zero-Allocation:** Không `new`, `malloc`, reallocation trong vòng lặp ước lượng trạng thái.
 2. **Bảo toàn số học:** Mọi ma trận hiệp phương sai $\mathbf{P}$ sau bước cập nhật Kalman bắt buộc được ép đối xứng: $\mathbf{P} = 0.5(\mathbf{P} + \mathbf{P}^T)$. Sử dụng Cholesky Guard ngăn ngừa giá trị kỳ dị.
@@ -232,8 +228,8 @@ Theo quy định trong [`docs/Rule.md`](docs/Rule.md), mã nguồn tuân thủ n
 
 ---
 
-## 📄 Bản quyền (License)
+## Bản quyền (License)
 
-Dự án được phân phối dưới giấy phép **[MIT License](LICENSE)**.
+Dự án được phân phối dưới giấy phép [MIT License](LICENSE).
 
-Bản quyền © 2026 **Stufusic**. Toàn quyền được bảo lưu.
+Bản quyền (c) 2026 Stufusic. Toàn quyền được bảo lưu.
