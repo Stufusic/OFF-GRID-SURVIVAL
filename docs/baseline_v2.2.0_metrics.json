@@ -1,0 +1,33 @@
+{
+  "version": "v2.2.0",
+  "timestamp": "2026-09-04T12:46:30+07:00",
+  "unit_tests": {
+    "total": 118,
+    "passed": 118,
+    "failed": 0,
+    "suites": 45,
+    "total_duration_ms": 1951
+  },
+  "key_suite_durations_ms": {
+    "FactorialBenchmarkTest": 883,
+    "PdrIntegrationTest": 288,
+    "MultiModalFusionTest": 90,
+    "Eskf3DTest": 25,
+    "ParticleFilterTest": 10,
+    "AuditDeepDiveTest": 35
+  },
+  "known_latent_bugs_status": {
+    "bug_1_particle_filter_vehicle_frozen": "ACTIVE_UNRESOLVED",
+    "bug_2_integrity_guard_disconnected": "ACTIVE_UNRESOLVED",
+    "bug_3_baro_stairs_misclassification": "ACTIVE_UNRESOLVED",
+    "bug_4_speed_dead_variable": "ACTIVE_UNRESOLVED",
+    "bug_5_highway_velocity_fault": "ACTIVE_UNRESOLVED",
+    "bug_6_panic_circling_unwired": "ACTIVE_UNRESOLVED",
+    "bug_7_freshness_watchdog_loophole": "ACTIVE_UNRESOLVED",
+    "bug_8_resource_governor_unwired": "ACTIVE_UNRESOLVED",
+    "bug_9_benchmark_timing_skew": "ACTIVE_UNRESOLVED",
+    "bug_10_blackbox_underflow_hazard": "ACTIVE_UNRESOLVED",
+    "bug_11_seqlock_memory_model_risk": "ACTIVE_UNRESOLVED",
+    "bug_12_log_weight_drift": "ACTIVE_UNRESOLVED"
+  }
+}

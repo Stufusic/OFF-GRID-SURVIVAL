@@ -1,0 +1,14 @@
+===== BENCHMARK SUMMARY [phase1] =====
+
+-- 2 dataset tự thu (ground truth tham chiếu dự án) --
+D1_10-57-01_stairs_loop: bước 139/145 (-4.1%) | loop 12.44m (ref ~2.54m) | Z_end -5.78m (ref ~0.0m) | landing 0 | t_up 6s t_dn 26s | up pha-đầu 6s
+D2_11-24-39_jog_loop: bước 119/100 (+19.0%) | loop 22.38m (ref ~2.06m) | Z_end -1.49m (ref ~0.0m) | landing 0 | t_up 0s t_dn 5s | up pha-đầu 0s
+
+-- MotionSense (nhãn hoạt động thật) --
+Chính xác trội: 44.7% (161/360)
+  STAIRS_ASCENT  :   2.8% đúng (2/72) | trội: {'STAIRS_DESCENT': 66, 'WALKING_FLAT': 4, 'STAIRS_ASCENT': 2}
+  STAIRS_DESCENT :  95.8% đúng (69/72) | trội: {'STAIRS_DESCENT': 69, 'RUNNING': 1, 'STATIONARY': 1, 'WALKING_FLAT': 1}
+  WALKING_FLAT   :   5.6% đúng (4/72) | trội: {'STAIRS_DESCENT': 62, 'WALKING_FLAT': 4, 'RUNNING': 4, 'STAIRS_ASCENT': 2}
+  RUNNING        :   8.3% đúng (4/48) | trội: {'STAIRS_DESCENT': 38, 'RUNNING': 4, 'WALKING_FLAT': 4, 'STAIRS_ASCENT': 2}
+  STATIONARY     :  85.4% đúng (82/96) | trội: {'STATIONARY': 82, 'WALKING_FLAT': 14}
+Số bước (median err theo loại): WALKING_FLAT: -1.1% | RUNNING: -1.1% | STAIRS_ASCENT: -2.4% | STAIRS_DESCENT: -1.4%

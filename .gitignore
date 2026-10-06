@@ -1,0 +1,59 @@
+# Build outputs & caches
+build/
+build*/
+bin/
+lib/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+*.ninja
+*.ninja_deps
+*.ninja_log
+compile_commands.json
+
+# Compiled binaries & libraries
+*.exe
+*.obj
+*.o
+*.a
+*.lib
+*.dll
+*.dylib
+*.so
+*.pdb
+*.idb
+*.ilk
+*.exp
+
+# IDE & Editor files
+.cache/
+.zcode/
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln
+*.vcxproj*
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Large raw dataset archives & temporary files
+testdata/*.zip
+testdata/A_DeviceMotion_data/
+testdata/__MACOSX/
+__MACOSX/
+*.tmp
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,10 @@
+===== BENCHMARK SUMMARY [a1e] =====
+
+-- MotionSense (nhãn hoạt động thật) --
+Chính xác trội: 51.7% (186/360)
+  STAIRS_ASCENT  :   0.0% đúng (0/72) | trội: {'STAIRS_DESCENT': 51, 'WALKING_FLAT': 18, 'RUNNING': 3}
+  STAIRS_DESCENT :  41.7% đúng (30/72) | trội: {'WALKING_FLAT': 42, 'STAIRS_DESCENT': 30}
+  WALKING_FLAT   :  68.1% đúng (49/72) | trội: {'WALKING_FLAT': 49, 'STAIRS_DESCENT': 17, 'RUNNING': 6}
+  RUNNING        :  22.9% đúng (11/48) | trội: {'WALKING_FLAT': 37, 'RUNNING': 11}
+  STATIONARY     : 100.0% đúng (96/96) | trội: {'STATIONARY': 96}
+Số bước (median err theo loại): WALKING_FLAT: -0.6% | RUNNING: -29.8% | STAIRS_ASCENT: -1.1% | STAIRS_DESCENT: -1.0%

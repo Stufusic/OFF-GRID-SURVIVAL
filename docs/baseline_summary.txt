@@ -1,0 +1,14 @@
+===== BENCHMARK SUMMARY [baseline] =====
+
+-- 2 dataset tự thu (ground truth tham chiếu dự án) --
+D1_10-57-01_stairs_loop: bước 124/145 (-14.5%) | loop 10.95m (ref ~2.54m) | Z_end -14.85m (ref ~0.0m) | landing 0 | t_up 0s t_dn 54s | up pha-đầu 0s
+D2_11-24-39_jog_loop: bước 98/100 (-2.0%) | loop 12.99m (ref ~2.06m) | Z_end -12.71m (ref ~0.0m) | landing 0 | t_up 0s t_dn 50s | up pha-đầu 0s
+
+-- MotionSense (nhãn hoạt động thật) --
+Chính xác trội: 39.4% (142/360)
+  STAIRS_ASCENT  :   0.0% đúng (0/72) | trội: {'STAIRS_DESCENT': 53, 'WALKING_FLAT': 17, 'STATIONARY': 2}
+  STAIRS_DESCENT :  84.7% đúng (61/72) | trội: {'STAIRS_DESCENT': 61, 'WALKING_FLAT': 10, 'STATIONARY': 1}
+  WALKING_FLAT   :   1.4% đúng (1/72) | trội: {'STAIRS_DESCENT': 70, 'VEHICLE_WHEELED': 1, 'WALKING_FLAT': 1}
+  RUNNING        :   0.0% đúng (0/48) | trội: {'STAIRS_DESCENT': 46, 'WALKING_FLAT': 1, 'STATIONARY': 1}
+  STATIONARY     :  83.3% đúng (80/96) | trội: {'STATIONARY': 80, 'STAIRS_DESCENT': 16}
+Số bước (median err theo loại): WALKING_FLAT: -1.6% | RUNNING: -4.6% | STAIRS_ASCENT: -3.7% | STAIRS_DESCENT: -4.6%

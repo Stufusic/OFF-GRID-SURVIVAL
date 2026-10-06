@@ -1,0 +1,5 @@
+===== BENCHMARK SUMMARY [phase3b] =====
+
+-- 2 dataset tự thu (ground truth tham chiếu dự án) --
+D1_10-57-01_stairs_loop: bước 125/145 (-13.8%) | loop 11.31m (ref ~2.54m) | Z_end +0.00m (ref ~0.0m) | landing 0 | t_up 0s t_dn 0s | up pha-đầu 0s
+D2_11-24-39_jog_loop: bước 104/100 (+4.0%) | loop 19.30m (ref ~2.06m) | Z_end +0.00m (ref ~0.0m) | landing 0 | t_up 0s t_dn 0s | up pha-đầu 0s

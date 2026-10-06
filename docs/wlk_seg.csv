@@ -1,0 +1,16 @@
+dataset,steps,duration_s,final_east_m,final_north_m,loop_closure_m,stair_step_count,riser_m,cumulative_vertical_m,landing_count,activity,activity_duration_s,activity_steps,activity_avg_speed_m_s
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,STATIONARY,1.58,1,0.00237126
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,0.88,2,1.45312
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,0.84,1,2.24316
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,1.36,3,1.86646
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,1.26,2,1.93546
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,1.04,2,1.87717
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,0.8,1,2.11099
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,1.44,3,1.59469
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,0.8,1,1.97926
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,1.44,3,1.811
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,7.5,13,2.20007
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,2.5,5,1.73577
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,0.8,1,2.25545
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,WALKING_FLAT,1.44,3,1.80773
+C:/New PJ/OFF-GRID SURVIVAL/testdata/motionsense/wlk_15_sub1,47,26.64,7.57942,-4.54639,8.8384,0,0.165,0,0,RUNNING,2.96,6,2.09673

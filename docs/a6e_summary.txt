@@ -1,0 +1,5 @@
+===== BENCHMARK SUMMARY [a6e] =====
+
+-- 2 dataset tự thu (ground truth tham chiếu dự án) --
+D1_10-57-01_stairs_loop: bước 124/145 (-14.5%) | loop 2.88m (ref ~2.54m) | Z_end -4.79m (ref ~0.0m) | landing 0 | t_up 24s t_dn 43s | up pha-đầu 18s
+D2_11-24-39_jog_loop: bước 95/100 (-5.0%) | loop 3.58m (ref ~2.06m) | Z_end -5.45m (ref ~0.0m) | landing 1 | t_up 11s t_dn 28s | up pha-đầu 6s

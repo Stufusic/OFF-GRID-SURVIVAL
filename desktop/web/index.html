@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="OFF-GRID SURVIVAL NAV-CORE — bảng điều khiển dẫn đường xác suất ngoại tuyến: bản đồ tactical, CE95, sức khỏe cảm biến và gói tin cứu hộ 160-bit (chỉ-đọc).">
+<meta name="theme-color" content="#0E100F">
+<title>OFF-GRID SURVIVAL // NAV-CORE — Tactical Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="sq"></span>OFF-GRID SURVIVAL <span class="dim">// NAV-CORE v2.3</span></div>
+  <div class="clock" id="clock">T+00:00:00</div>
+  <div class="link">
+    <span id="conn" class="conn off"><i></i><b>NO LINK</b></span>
+  </div>
+</header>
+
+<main>
+  <h1 class="sr-only">Bảng điều khiển dẫn đường Off-Grid Survival</h1>
+
+  <!-- Dải trạng thái an toàn -->
+  <section id="safety-banner" class="strip nominal" aria-live="polite">
+    <i class="ind"></i><span class="safety-text">STATUS: NOMINAL — AN TOÀN BÌNH THƯỜNG</span>
+  </section>
+
+  <!-- Hàng số đo -->
+  <section class="readouts br" aria-label="Chỉ số chính">
+    <div class="ro">
+      <div class="lbl">GNS <em>· TIN CẬY</em></div>
+      <div class="val"><span id="gns">0%</span><span class="bars" id="gns-bars"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    </div>
+    <div class="ro">
+      <div class="lbl">CE95 <em>· BÁN TRỤC</em></div>
+      <div class="val amber"><span id="ce95">±0.0</span><u>m</u></div>
+    </div>
+    <div class="ro">
+      <div class="lbl">STEPS <em>· SỐ BƯỚC</em></div>
+      <div class="val"><span id="steps">0000</span></div>
+    </div>
+    <div class="ro">
+      <div class="lbl">DIST <em>· QUÃNG ĐƯỜNG</em></div>
+      <div class="val"><span id="dist">000.0</span><u>m</u></div>
+    </div>
+    <div class="ro">
+      <div class="lbl">ALT <em>· CAO ĐỘ BARO</em></div>
+      <div class="val"><span id="alt">0.0</span><u>m</u></div>
+    </div>
+    <div class="ro">
+      <div class="lbl">PWR <em>· PIN</em></div>
+      <div class="val"><span id="battery">100%</span></div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <!-- Bản đồ -->
+    <section class="panel br map-panel">
+      <h2>TAC MAP <em>// BẢN ĐỒ · <span id="grid-label">UTM GRID 250 m</span></em></h2>
+      <div class="map-wrap">
+        <canvas id="map" aria-label="Bản đồ tactical"></canvas>
+        <div class="map-tools">
+          <button id="zoom-in" title="Phóng to">[+]</button>
+          <button id="zoom-out" title="Thu nhỏ">[−]</button>
+          <button id="fit" title="Vừa khung">[FIT]</button>
+        </div>
+      </div>
+      <div class="legend">
+        <span><b class="g-est">+</b>ƯỚC LƯỢNG</span>
+        <span><b class="g-true">◇</b>VỊ TRÍ THẬT</span>
+        <span><b class="g-pf">·</b>PF CLOUD</span>
+        <span><b class="g-ce">◯</b>CE95 H0–H3</span>
+        <span><b class="g-ct">~</b>ĐỒNG MỨC</span>
+        <span id="zoom-label" class="coords"></span>
+      </div>
+    </section>
+
+    <div class="col-right">
+      <section class="panel br">
+        <h2>ACTIVITY <em>// HOẠT ĐỘNG</em></h2>
+        <div class="activity-row">
+          <div class="activity"><span id="activity">IDLE</span><em id="activity-vi">· ĐỨNG YÊN</em></div>
+          <div class="meter" id="conf-meter" aria-label="Độ tin cậy"></div>
+          <span class="pct" id="conf-pct">0%</span>
+        </div>
+        <div id="stair" class="sub">THANG · chưa có dữ liệu</div>
+      </section>
+
+      <section class="panel br">
+        <h2>SIGNAL TRACE <em>// 60s @10Hz</em></h2>
+        <canvas id="series" aria-label="Chuỗi tín hiệu"></canvas>
+        <div class="legend">
+          <span><b class="l-gns">━</b>GNS</span>
+          <span><b class="l-spd">━</b>V m/s</span>
+          <span><b class="l-vz">━</b>Vz m/s</span>
+          <span><b class="l-conf">━</b>CONF</span>
+        </div>
+      </section>
+
+      <section class="panel br">
+        <h2>SYS HEALTH <em>// SỨC KHỎE HỆ THỐNG</em></h2>
+        <div id="flags" class="cells"></div>
+        <div class="kv"><span>P(TRUE ∈ CE95)</span><b id="mode">—</b></div>
+      </section>
+
+      <section class="panel br">
+        <h2>RESCUE PKT 160-BIT <em>// GÓI CỨU HỘ</em>
+          <button id="copy-sms" class="inline">[COPY SMS]</button></h2>
+        <div id="packet-hex" class="hex">—</div>
+        <div class="kv col"><span>SMS PAYLOAD</span><div id="packet-sms" class="sms">—</div></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span id="fps">FPS —</span><span class="sep">·</span><span id="age">AGE —</span><span class="sep">·</span><span>READ-ONLY · SSE ~4Hz</span>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
